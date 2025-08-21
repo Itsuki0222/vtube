@@ -3,3 +3,29 @@
 <head>
     <meta charset="utf-8">
     <title>vtube</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <script>
+        const supabaseUrl = "https://yvxynwjfngvqwjjsqdma.supabase.co";
+        const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl2eHlud2pmbmd2cXdqanNxZG1hIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU1MTExMjQsImV4cCI6MjA3MTA4NzEyNH0.RLAfsXbVLT1fTu48_EvMYYD4pxFRQk4Ks3zx8DXruBU";
+        const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey, {
+            auth: { persistSession: true, autoRefreshToken: true }
+        });
+        let currentUser = null;
+        let currentUsername = "匿名";
+
+        async function checkLogin() {
+            const { data: { user } } = await supabaseClient.auth.getUser();
+            if (!user) {
+                location.href = "login.html";
+                return;
+            } else {
+                location.href = "home.html";
+                return;
+            }
+        }
+        checkLogin()
+    </script>
+</body>
+</html>
