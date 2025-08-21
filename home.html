@@ -3,10 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <title>◇VTube - ホーム</title>
-  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <style>
     body {
-      font-family: "Comic Sans MS", "Noto Sans JP", sans-serif;
+      font-family: "Comic Neue", "Noto Sans JP", sans-serif;
       background: linear-gradient(135deg, #ffe6f0, #e6f7ff);
       margin: 0;
       padding: 20px;
@@ -14,16 +17,27 @@
     header {
       background: #ff99cc; color: white; text-align: center;
       padding: 15px; font-size: 22px; font-weight: bold;
-      border-radius: 12px;
+      border-radius: 16px;
       margin-bottom: 20px;
     }
     a {
       display: inline-block;
-      margin: 10px; padding: 10px 20px;
-      border-radius: 16px;
+      margin: 10px;
+      padding: 10px 20px;
+      border-radius: 14px;
       text-decoration: none; color: white;
       background: linear-gradient(90deg, #ff99cc, #66ccff);
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: .2s;
+    }
+    a:hover {
+      box-shadow: 0 15px 30px -5px rgba(0,0,0,.15), 0 0 5px rgba(0,0,0,.1);
+      transform: translateY(-4px);
+    }
+    a:active {
+      box-shadow: none;
+      position: relative;
+      transform: translateY(4px);
     }
   </style>
 </head>

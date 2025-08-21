@@ -3,45 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <title>◇VTube - ログイン</title>
-  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <style>
     body {
-      font-family: "Comic Sans MS", "Noto Sans JP", sans-serif;
+      font-family: "Comic Neue", "Noto Sans JP", sans-serif;
       background: linear-gradient(135deg, #e6f7ff, #ffe6f0);
+    }
+    .wrap {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      margin: 0;
+      text-align: center;
+      height: 98vh;
+      flex-direction: column;
     }
-    .box {
-      background: #fff;
+    .box{
+      display: flex;
+      flex-direction: column;
+      background-color: #fdfdfd;
+      box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.2);
       padding: 30px;
       border-radius: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      width: 300px;
-      text-align: center;
     }
-    h2 { margin-bottom: 20px; color: #ff66aa; }
+    p {
+      font-size: 24px;
+      font-weight: bold;
+      color: #ff66aa;
+    }
     input {
-      width: 100%; padding: 10px; margin: 8px 0;
-      border: 1px solid #ccc; border-radius: 12px;
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      padding: 10px;
+      margin: 4px;
+      width: 18rem;
     }
     button {
-      width: 100%; padding: 10px; border: none;
+      padding: 10px;
+      border: none;
       border-radius: 20px;
-      background: linear-gradient(90deg, #ff99cc, #66ccff);
-      color: white; font-size: 16px; cursor: pointer;
+      background: linear-gradient(to right, #ff99cc, #66ccff);
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
       margin-top: 10px;
+      transition: .2s;
+    }
+    button:hover {
+      box-shadow: 0 15px 30px -5px rgba(0,0,0,.15), 0 0 5px rgba(0,0,0,.1);
+      transform: translateY(-4px);
+    }
+    button:active {
+      box-shadow: none;
+      position: relative;
+      transform: translateY(4px);
     }
   </style>
 </head>
 <body>
-  <div class="box">
-    <h2>ログイン</h2>
-    <input type="email" id="email" placeholder="メールアドレス">
-    <input type="password" id="password" placeholder="パスワード">
-    <button onclick="login()">ログイン / サインアップ</button>
+  <div class="wrap">
+    <div class="box">
+      <p class="title">ログイン</p>
+      <input type="email" id="email" placeholder="メールアドレス">
+      <input type="password" id="password" placeholder="パスワード">
+      <button onclick="login()">ログイン / サインアップ</button>
+    </div>
   </div>
 
   <script>
